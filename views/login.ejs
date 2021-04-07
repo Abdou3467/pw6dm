@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- imports and jquery and js-cookie -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <link rel="stylesheet" href="../public/css/login.css" />
+    <link rel="stylesheet" href="../public/css/shared_elements.css">
+    <title>Login</title>
+  </head>
+  <body onload="loginform.reset()">
+    <form method="post" id="loginform">
+      <div class="loginbox">
+        <h1>Login</h1>
+
+        <input
+          type="text"
+          name="username"
+          placeholder="username"
+          class="username"
+        />
+
+        <input
+          type="password"
+          name="password"
+          placeholder="*******"
+          class="password"
+        />
+
+        <a href="#"><div class="btn">Sign In</div></a>
+        <script>
+          $(".btn").click(function () {
+            $.post(
+              "/login",
+              {
+                username: $(".username").val(),
+                password: $(".password").val(),
+              },
+              (response) => {
+                if(response.token) {
+                  Cookies.set('authToken', response.token);
+                  $.get("/", (data) => {
+                    location.replace('/');
+                  });
+                }
+                if (response.error) {
+                  alert(response.message);
+                }
+              },
+              "json"
+            );
+          });
+        </script>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+ul {
+  color: #E2D6D3;
+  text-transform: capitalize;
+}
+
+
+.bouq {
+    background-color: #A84C33;
+    font-size: 18pt;
+    margin: 5px;
+    padding: 5px;
+}
+
+.bouq_flower {
+    background-color: #A84C33;
+    font-size: 18pt;
+    margin: 5px;
+    padding: 5px;
+}
+
+.cart {
+    float: right;
+    color: #2f384a;
+}
+
+.orders {
+    background-color: #A84C33;
+    font-size: 18pt;
+    margin: 5px;
+    padding: 5px;
+}

@@ -1,0 +1,71 @@
+
+
+body {
+  background-color: #01291f;
+  color: beige;
+  background: url(../images/bg.png);
+  background: no-repeat center center cover;
+  font: sans-serif;
+}
+
+.top_navbar {
+  background-color: #303e5a;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.top_navbar a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.banner {
+  padding: 60px;
+  text-align: center;
+  background: #2f384a;
+  color: rgb(243, 243, 243);
+  font-size: 40pt;
+  position: relative;
+}
+
+h3 {
+  background-color: #30394d;
+  overflow: hidden;
+  margin: 0px;
+  padding-left: 120px;
+  font-size: 18pt;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+}
+
+h3 a {
+  color: whitesmoke;
+  padding-right: 120px;
+  font-size: 18pt;
+}
+
+.select button {
+  background-color: #2F384A;
+  color: white;
+  font-size: 15pt;
+  min-width: 35px;
+}
+
+.select {
+  float: right;
+}
+
+img {
+  width: 25px;
+  height: 25px;
+}
+
+.zoom {
+  transform: scale(15);
+}

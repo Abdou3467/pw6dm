@@ -1,0 +1,61 @@
+body {
+  margin: 0 auto 0 auto;
+  width: 100%;
+  text-align: center;
+  margin: 20px 0px 20px 0px;
+}
+
+h1 {
+  font-size: 1.5em;
+  color: #525252;
+}
+
+.loginbox {
+  width: 320px;
+  height: 300px;
+  background: #E2D6D3;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border-radius: 6px;
+  margin: 0 auto 0 auto;
+  padding: 0px 0px 70px 0px;
+  border: #A84C33 4px solid;
+}
+
+.username {
+  background: #ecf0f1;
+  border: #ccc 1px solid;
+  border-bottom: #ccc 2px solid;
+  padding: 8px;
+  width: 250px;
+  color: #000000;
+  margin-top: 10px;
+  font-size: 1em;
+  border-radius: 4px;
+}
+
+.password {
+  border-radius: 4px;
+  background: #ecf0f1;
+  border: #ccc 1px solid;
+  padding: 8px;
+  width: 250px;
+  font-size: 1em;
+  margin-top: 20px;
+}
+
+.btn {
+  background: #2F384A;
+  padding-top: 15px;
+  width: 99px;
+  color: white;
+  position: relative;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

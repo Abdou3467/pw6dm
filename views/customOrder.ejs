@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <link rel="stylesheet" href="../public/css/shared_elements.css" />
+    <link rel="stylesheet" href="../public/css/home.css" />
+    <title>Create A Bouquet</title>
+  </head>
+
+  <body>
+    <div class="top_navbar">
+      <a href="#"><div class="btn" id="logout">Log out</div></a>
+      <a href="#"><div class="btn" id="orders">My Orders</div></a>
+      <a href="#"><div class="btn" id="cart">Cart</div></a>
+      <a href="#"><div class="btn" id="home">Home</div></a>
+    </div>
+    <div class="banner">Moomin's flower shop!</div>
+
+    <div class="flowers">
+      <h3>Choose the flowers you want to include:</h3>
+      <ul>
+        <% flowers.forEach(flower => { %>
+        <li class="bouq">
+          <%= flower.name %> <img src="../public/images/<%=flower.name%>.png" alt="<%=flower.name%>"> --- Unit Price: <b class="price" name="p-<%=flower.name%>"> <%= flower.price %> </b> &euro;
+          <div class="select" id="flower<%=flower.name%>">
+            <button class="buttons" name="minus-<%=flower.name%>">-</button>
+
+            <span class="quantity" name="q-<%=flower.name%>%>">0</span>
+
+            <button class="buttons" name="plus-<%=flower.name%>">+</button>
+          </div>
+        </li>
+        <% }) %>
+        <li class="bouq"style="text-align: center;">Price: <b  id="price" >0</b> &euro;</li>
+      </ul>
+    </div>
+    <h3>
+      <a href="#" style="float: right;" id="custom">Add to cart!</a>
+    </h3>
+  </body>
+  <!-- Loading scripts -->
+  <script src="../public/scripts/zoom.js"></script>
+  <script src="../public/scripts/customOrder.js"></script>
+  <script src="../public/scripts/logout.js"></script>
+  <script src="../public/scripts/viewCart.js"></script>
+  <script src="../public/scripts/viewOrders.js"></script>
+</html>

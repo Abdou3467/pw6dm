@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <link rel="stylesheet" href="../public/css/shared_elements.css">
+    <link rel="stylesheet" href="../public/css/home.css">
+    <title>My Orders</title>
+</head>
+<body>
+    <div class="top_navbar">
+        <a href="#"><div class="btn" id="logout">Log out</div></a>
+        <a href="#"><div class="btn" id="orders">My Orders</div></a>
+        <a href="#"><div class="btn" id="cart">Cart</div></a>
+        <a href="#"><div class="btn" id="home">Home</div></a>
+    </div>
+    <div class="banner">Moomin's flower shop!</div>
+    
+    <div class="bouquets">
+        <h3>Your Orders:</h3>
+        <ul>
+          <% orders.forEach(order => { %>
+           <li class="orders">
+             Order ID: <%= order.id %> -- Total Price <b><%= order.price %> &euro;</b>
+              <ul style="display: none;" class="content">
+                <% order.bouquets.forEach(bouq => { %>
+                <li class="bouq">
+                  Bouquet <%= bouq.bouq_id %> - quantity: <%= bouq.quantity %> -- total price <%= bouq.price*bouq.quantity %> &euro;
+                  Status: 
+                    <% if (bouq.status === 2) { %>
+                      Ready
+                    <% } else {%>
+                      Waiting for preparation
+                    <% } %> 
+                      <ul class="bouq_content">
+                        <% bouq.flowers.forEach(element => { %>
+                          <li class="bouq_flower">
+                            <%=element.quantity %> <%= element.flower_name %>(s) <img src="../public/images/<%=element.flower_name%>.png" alt="<%=element.flower_name%>"> -- unit
+                            price: <%= element.price %> &euro;
+                          </li>
+                        <% }) %>
+                        Note: this content is for one bouquet!
+                      </ul>
+                </li>
+                <% }) %>
+            </ul>
+          </li>
+        <% }) %>
+      </ul>
+
+      <h3> 
+            <% if (orders.length === 0) { %>
+                You have no orders!       
+            <% } %>
+        </h3>
+</body>
+    <!-- Loading scripts -->
+    <script>
+      $(".orders").click(function () {
+        $(this).children(".content").toggle("slow");
+      });
+    </script>
+    <script src="../public/scripts/zoom.js"></script>
+    <script src="../public/scripts/logout.js"></script>
+    <script src="../public/scripts/viewCart.js"></script>
+    <script src="../public/scripts/viewOrders.js"></script>
+</html>
