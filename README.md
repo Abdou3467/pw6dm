@@ -17,14 +17,9 @@ Note 1:
     - The variable `SecretKey` in the .env file is used to generate the jsonwebtokens that handle authorizations.
 
 Note 2: 
-    - J'ai fait le truc do zoom avec les images des fleurs au lieu des bouquets.
     - I did the zoom thing on hover with the flowers instead of bouquets, as those are static and making new pictures
         for custom bouquets didn't make sense.
 
 Note 3:
     - I could've split the routes for customers and employees in seperate files but i was lazy.
     - I do now know how to make the sorting stuff with jQuery, i would appreciate any advice on how to do so.
-
-Note 4:
-    - Please try going easy on us with the final project, we are exhausted, Thank you!
-    - Sorry for typing all this in English, i was in a hurry and my french isn't good enough to express myself fully.
